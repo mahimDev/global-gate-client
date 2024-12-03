@@ -1,8 +1,11 @@
+import Banner from "../../Shared/Banner/Banner";
+import LatestVisas from "../../Shared/LatestVisas/LatestVisas";
 
 const Home = () => {
     return (
         <div>
-            this is home
+            <Banner></Banner>
+            <LatestVisas></LatestVisas>
         </div>
     );
 };

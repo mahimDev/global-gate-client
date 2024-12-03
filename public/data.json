@@ -1,0 +1,126 @@
+[
+  {
+    "id": 1,
+    "country_image": "https://i.ibb.co.com/znPKq81/us.jpg",
+    "flag_image": "https://i.ibb.co.com/wWdnHp0/usFlag.webp",
+    "country_name": "United States",
+    "visa_type": "Tourist Visa",
+    "processing_time": "15-30 days",
+    "required_documents": [
+      "Valid passport",
+      "Visa application form",
+      "Recent passport-sized photograph",
+      "Proof of financial means",
+      "Travel itinerary",
+      "Invitation letter (if applicable)"
+    ],
+    "description": "Explore the diverse landscapes and vibrant cities of the United States.",
+    "age_restriction": "None",
+    "fee": "$160",
+    "validity": "6 months",
+    "application_method": "Online and at the U.S. Embassy/Consulate"
+  },
+  {
+    "id": 2,
+    "country_image": "https://i.ibb.co.com/Sdhsmwv/canada.jpg",
+    "flag_image": "https://i.ibb.co.com/XkbFCKH/canada-Flag.jpg",
+    "country_name": "Canada",
+    "visa_type": "Work Permit",
+    "processing_time": "8-12 weeks",
+    "required_documents": [
+      "Valid passport",
+      "Job offer letter",
+      "Work permit application",
+      "Proof of educational qualifications",
+      "Medical examination certificate",
+      "Proof of financial means"
+    ],
+    "description": "Work in one of the most developed and diverse countries in the world.",
+    "age_restriction": "18+",
+    "fee": "$155",
+    "validity": "Up to 2 years",
+    "application_method": "Online and at Visa Application Centers"
+  },
+  {
+    "id": 3,
+    "country_image": "https://i.ibb.co.com/xmGf75g/uk.jpg",
+    "flag_image": "https://i.ibb.co.com/tC93fZj/ukFlag.png",
+    "country_name": "United Kingdom",
+    "visa_type": "Student Visa",
+    "processing_time": "3 weeks",
+    "required_documents": [
+      "Valid passport",
+      "Confirmation of Acceptance for Studies (CAS)",
+      "Proof of financial support",
+      "English language proficiency test results",
+      "Tuberculosis test results (if applicable)"
+    ],
+    "description": "Study at world-renowned institutions in the United Kingdom.",
+    "age_restriction": "16+",
+    "fee": "£348",
+    "validity": "Duration of the course",
+    "application_method": "Online and at Visa Application Centers"
+  },
+  {
+    "id": 4,
+    "country_image": "https://i.ibb.co.com/8m7tgZY/australia.jpg",
+    "flag_image": "https://i.ibb.co.com/S0ZDJ2f/australia-Flag.jpg ",
+    "country_name": "Australia",
+    "visa_type": "Visitor Visa",
+    "processing_time": "20-30 days",
+    "required_documents": [
+      "Valid passport",
+      "Visa application form",
+      "Proof of financial means",
+      "Health insurance",
+      "Travel itinerary",
+      "Letter of support (if applicable)"
+    ],
+    "description": "Experience the stunning natural beauty and unique wildlife of Australia.",
+    "age_restriction": "None",
+    "fee": "AUD 145",
+    "validity": "3 months",
+    "application_method": "Online"
+  },
+  {
+    "id": 5,
+    "country_image": "https://i.ibb.co.com/fDdz96M/japan.jpg",
+    "flag_image": "https://i.ibb.co.com/TWQ09QB/japan-Flag.jpg",
+    "country_name": "Japan",
+    "visa_type": "Business Visa",
+    "processing_time": "5-10 days",
+    "required_documents": [
+      "Valid passport",
+      "Visa application form",
+      "Recent passport-sized photograph",
+      "Letter of invitation",
+      "Certificate for completion of registration",
+      "Business itinerary"
+    ],
+    "description": "Engage in business opportunities in Japan, the land of innovation.",
+    "age_restriction": "18+",
+    "fee": "JPY 3,000",
+    "validity": "90 days",
+    "application_method": "At the Japanese Embassy or Consulate"
+  },
+  {
+    "id": 6,
+    "country_image": "https://i.ibb.co.com/M5wFtYT/United-Arab-Emirates.jpg",
+    "flag_image": "https://i.ibb.co.com/DML8FPw/United-Arab-Emirates-Flag.jpg",
+    "country_name": "United Arab Emirates",
+    "visa_type": "Transit Visa",
+    "processing_time": "2-5 days",
+    "required_documents": [
+      "Valid passport",
+      "Confirmed flight ticket",
+      "Transit visa application form",
+      "Passport-sized photograph",
+      "Proof of onward travel"
+    ],
+    "description": "Discover the futuristic cities of UAE during your transit.",
+    "age_restriction": "None",
+    "fee": "$50",
+    "validity": "96 hours",
+    "application_method": "Through airlines or online"
+  }
+]
