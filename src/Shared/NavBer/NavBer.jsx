@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const NavBer = () => {
     return (
@@ -15,7 +15,9 @@ const NavBer = () => {
                         <NavLink ><li>My Visa applications</li></NavLink>
                     </ul>
                 </div>
-                <button className="border-2 border-black  py-1 px-3 font-semibold rounded-md">Login</button>
+                <Link to={'/login'}>
+                    <button className="border-2 border-black  py-1 px-3 font-semibold rounded-md"
+                    >Login</button></Link>
             </div>
         </div>
 
