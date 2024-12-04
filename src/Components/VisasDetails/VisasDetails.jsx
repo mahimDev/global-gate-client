@@ -6,7 +6,6 @@ import { toast } from "react-toastify";
 const VisasDetails = () => {
     const { user } = useContext(AuthContext)
     const [isOpen, setIsOpen] = useState(false);
-    // const [formData, setFormData] = useState({})
     const { id } = useParams()
     const loaderData = useLoaderData()
     const item = loaderData  //.find(data => data.id == id)
@@ -23,6 +22,7 @@ const VisasDetails = () => {
         validity,
         visa_type,
     } = item
+
     const appliedDate = new Date().toLocaleDateString()
     // 
 
@@ -32,9 +32,24 @@ const VisasDetails = () => {
         const firstName = form.get('firstName')
         const lastName = form.get('lastName')
         const email = user?.email;
-        console.log({ email, firstName, lastName, appliedDate, fee });
+        const info = { email, firstName, lastName, appliedDate, fee };
+        const allInformation = { ...item, ...info }
         setIsOpen(false); // Close modal after submission
-        toast.apply("Application submitted successfully!");
+        fetch('http://localhost:2000/applyVisa', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(allInformation)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                if (data?.insertedId) {
+                    toast.success("Application submitted successfully!");
+                }
+            })
+
     };
 
     return (
@@ -44,14 +59,17 @@ const VisasDetails = () => {
             </div>
             <div>
                 <div className=" flex">
-                    <div className=" ">
+                    <div className="">
                         <h1 className="text-4xl font-semibold ">{country_name}</h1>
                         <p className="mt-7 "><strong>Visa Type:</strong> <br /> {visa_type}</p>
-                        <p className="mt-3"><strong>Application Method: </strong> <br /> {application_method}</p>
                         <p className="mt-3"><strong>Validity:</strong> <br /> {validity}</p>
+                        <p className="mt-3"><strong>Age Restriction:</strong> <br /> {age_restriction}</p>
                         <p className="mt-3"><strong>Processing Time:</strong> <br /> {processing_time}</p>
+                        <p className="mt-3"><strong>Required Documents:</strong> <br /> {required_documents}</p>
+                        <p className="mt-3"><strong>Application Method: </strong> <br /> {application_method}</p>
+                        <p className="mt-3 "><strong>Description: </strong> <br /> {description}</p>
                     </div>
-                    <p className="text-[#d5a403] text-4xl font-semibold rounded-md"> {fee}</p>
+                    <p className="text-[#d5a403] text-4xl font-semibold rounded-md  w-32"> {fee}</p>
                 </div>
                 <div className="flex mt-10">
                     <button

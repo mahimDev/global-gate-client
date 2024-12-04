@@ -3,7 +3,7 @@ import LatestVisaCard from "../../Components/LatestVisaCard/LatestVisaCard";
 
 const AllVisas = () => {
     const loaderData = useLoaderData()
-    console.log(loaderData)
+
     return (
         <div className="grid grid-cols-4 gap-3">
             {

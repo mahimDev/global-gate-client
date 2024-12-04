@@ -17,7 +17,7 @@ const LatestVisaCard = (props = {}) => {
         visa_type,
         _id
     } = item
-    console.log(_id)
+
     // const handleSeeDetailsBtn = id => {
     //     console.log(id)
     // }
