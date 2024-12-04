@@ -5,6 +5,7 @@ import VisasDetails from "../Components/VisasDetails/VisasDetails";
 import Layout from "../Layout/Layout";
 import Register from "../Pages/Register/Register";
 import Login from "../Pages/Login/Login";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
     {
@@ -29,7 +30,9 @@ const router = createBrowserRouter([
                     },
                     {
                         path: '/visaDetails/:id',
-                        element: <VisasDetails></VisasDetails>,
+                        element: <PrivateRoute>
+                            <VisasDetails></VisasDetails>
+                        </PrivateRoute>,
                         loader: () => fetch('../data.json')
                     }
 
