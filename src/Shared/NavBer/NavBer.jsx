@@ -1,6 +1,20 @@
+import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../../Auth/AuthProvider";
+import { toast } from "react-toastify";
 
 const NavBer = () => {
+    const { user, signOutUser } = useContext(AuthContext)
+    const handleLogOut = () => {
+        signOutUser()
+            .then(res => {
+                console.log(res)
+                toast.success('log out successfully')
+            })
+            .catch(err => {
+                console.log(err)
+            })
+    }
     return (
 
         <div className="top-0 sticky z-30 bg-[#D4AF37] backdrop-blur-xl w-11/12 mx-auto ">
@@ -15,9 +29,20 @@ const NavBer = () => {
                         <NavLink ><li>My Visa applications</li></NavLink>
                     </ul>
                 </div>
-                <Link to={'/login'}>
-                    <button className="border-2 border-black  py-1 px-3 font-semibold rounded-md"
-                    >Login</button></Link>
+                {
+                    user ?
+
+                        <Link to={'/login'}>
+                            <button
+                                onClick={handleLogOut}
+                                className="border-2 border-black  py-1 px-3 font-semibold rounded-md"
+                            >LogOut</button></Link>
+                        :
+
+                        <Link to={'/login'}>
+                            <button className="border-2 border-black  py-1 px-3 font-semibold rounded-md"
+                            >Login</button></Link>
+                }
             </div>
         </div>
 

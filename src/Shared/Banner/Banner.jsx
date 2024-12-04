@@ -1,4 +1,4 @@
-import world from '../../../public/WorldMap.svg';
+
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Scrollbar } from 'swiper/modules';
 import { Typewriter } from 'react-simple-typewriter'

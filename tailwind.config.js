@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       backgroundImage: {
-        world: `url('/public/WorldMap.svg')`,
+        world: `url('../WorldMap.svg')`,
       },
     },
   },
