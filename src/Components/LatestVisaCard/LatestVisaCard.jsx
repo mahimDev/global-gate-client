@@ -20,7 +20,7 @@ const LatestVisaCard = (props = {}) => {
     //     console.log(id)
     // }
     return (
-        <div className=" p-5 rounded-sm  hover:shadow-2xl hover:shadow-[#8270337d] duration-200 ">
+        <div className=" p-5 rounded-md  hover:shadow-2xl hover:shadow-[#8270337d] duration-200 ">
             <div className="relative ">
                 <img className="w-full h-[300px]" src={country_image} alt="" />
                 <div className="border absolute top-[80%] left-[35%] rounded-full w-28 h-28 overflow-hidden bg-black">
