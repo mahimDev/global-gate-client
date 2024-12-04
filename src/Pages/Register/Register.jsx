@@ -1,11 +1,12 @@
 import { useContext } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Auth/AuthProvider";
 import { toast } from "react-toastify";
 
 const Register = () => {
     const { user, createUser, googleLogin } = useContext(AuthContext)
     const navigate = useNavigate()
+    const { state } = useLocation()
     const handleRegistration = e => {
         e.preventDefault()
         const form = new FormData(e.target)
@@ -18,6 +19,7 @@ const Register = () => {
             .then(res => {
                 console.log(res.user)
                 toast.success('Registration successful')
+                navigate(state || "/")
             })
             .catch(err => {
                 console.log(err)
@@ -28,7 +30,7 @@ const Register = () => {
         googleLogin()
             .then(res => {
                 console.log(res.user)
-                navigate('/')
+                navigate(state || "/")
             })
             .then(err => {
                 console.log(err)

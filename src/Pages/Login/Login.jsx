@@ -6,8 +6,8 @@ import { AuthContext } from "../../Auth/AuthProvider";
 const Login = () => {
     const navigate = useNavigate()
     const { state } = useLocation()
-    console.log(state)
-    const { signInUser } = useContext(AuthContext)
+
+    const { signInUser, googleLogin } = useContext(AuthContext)
     const handleSignIn = e => {
         e.preventDefault()
         const form = new FormData(e.target)
@@ -19,12 +19,22 @@ const Login = () => {
             .then(res => {
                 console.log(res.user)
                 toast.success('SignIn successful')
-                navigate(state)
+                navigate(state || "/")
             })
             .catch(err => {
                 console.log(err)
             })
 
+    }
+    const handleGoogleLogin = () => {
+        googleLogin()
+            .then(res => {
+                console.log(res.user)
+                navigate(state || '/')
+            })
+            .then(err => {
+                console.log(err)
+            })
     }
     return (
         <div className="flex justify-center">
@@ -67,7 +77,9 @@ const Login = () => {
                     </div>
                 </form>
                 <div className="flex pt-4 mt-4 border-t-2">
-                    <button className="flex justify-center items-center  rounded-sm w-full  py-3 text-xl font-semibold bg-[#D4AF37] hover:shadow-xl duration-300">
+                    <button
+                        onClick={handleGoogleLogin}
+                        className="flex justify-center items-center  rounded-sm w-full  py-3 text-xl font-semibold bg-[#D4AF37] hover:shadow-xl duration-300">
                         <img className="w-7" src="https://img.icons8.com/?size=100&id=17950&format=png&color=000000" alt="" />
                         oogle
                     </button>

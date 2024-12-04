@@ -9,7 +9,7 @@ const VisasDetails = () => {
     // const [formData, setFormData] = useState({})
     const { id } = useParams()
     const loaderData = useLoaderData()
-    const item = loaderData.find(data => data.id == id)
+    const item = loaderData  //.find(data => data.id == id)
     const {
         age_restriction,
         application_method,
@@ -38,7 +38,7 @@ const VisasDetails = () => {
     };
 
     return (
-        <div className="w-10/12 mx-auto mt-20 flex gap-20">
+        <div className="w-11/12 mx-auto mt-20 flex gap-20">
             <div className="p-2 border rounded-md bg-amber-400">
                 <img className=" h-[70vh] rounded-md" src={country_image} alt="" />
             </div>

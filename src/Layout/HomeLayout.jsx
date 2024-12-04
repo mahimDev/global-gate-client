@@ -4,7 +4,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 const HomeLayout = () => {
     return (
-        <div>
+        <div className="w-11/12 mx-auto">
             <ToastContainer />
             <NavBer></NavBer>
             <Outlet></Outlet>
