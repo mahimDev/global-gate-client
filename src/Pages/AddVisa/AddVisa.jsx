@@ -1,25 +1,16 @@
+import { useContext } from "react";
 import { toast } from "react-toastify";
+import { AuthContext } from "../../Auth/AuthProvider";
 
 const AddVisa = () => {
-
+    const { user } = useContext(AuthContext)
+    const email = user?.email
     const documentOptions = [
         "Valid passport",
         "Visa application form",
         " Health insurance",
         "Travel itinerary"
     ];
-
-    // age_restriction,
-    // application_method,
-    // country_image,
-    // flag_image,
-    // country_name,
-    //     description,
-    //     fee,
-    //     processing_time,
-    //     required_documents,
-    //     validity,
-    //     visa_type,
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -34,7 +25,7 @@ const AddVisa = () => {
         const application_method = form.get('applicationMethod')
         const required_documents = form.get('checkbox')
         const description = form.get('description')
-        const visaInfo = { country_image, country_name, visa_type, processing_time, age_restriction, fee, validity, application_method, required_documents, description };
+        const visaInfo = { country_image, country_name, visa_type, processing_time, age_restriction, fee, validity, application_method, required_documents, description, email };
         fetch('http://localhost:2000/addVisa', {
             method: 'POST',
             headers: {

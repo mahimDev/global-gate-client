@@ -32,20 +32,31 @@ const VisasDetails = () => {
         const firstName = form.get('firstName')
         const lastName = form.get('lastName')
         const email = user?.email;
-        const info = { email, firstName, lastName, appliedDate, fee };
-        const allInformation = { ...item, ...info }
+        const info = {
+            email, firstName, lastName, appliedDate, age_restriction,
+            application_method, country_name,
+            description,
+            fee,
+            processing_time,
+            required_documents,
+            validity,
+            visa_type,
+            country_image,
+        };
+
+        console.log(info)
         setIsOpen(false); // Close modal after submission
         fetch('http://localhost:2000/applyVisa', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify(allInformation)
+            body: JSON.stringify(info)
         })
             .then(res => res.json())
             .then(data => {
                 console.log(data)
-                if (data?.insertedId) {
+                if (data.insertedId) {
                     toast.success("Application submitted successfully!");
                 }
             })

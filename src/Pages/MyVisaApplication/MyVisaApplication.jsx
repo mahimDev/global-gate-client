@@ -1,13 +1,12 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Auth/AuthProvider";
-import MyAddedVisasCard from "../../Components/MyAddedVisasCard/MyAddedVisasCard";
 
-const MyAddedVisas = () => {
+const MyVisaApplication = () => {
     const [data, setData] = useState([])
     const { user } = useContext(AuthContext)
     const email = user?.email
     useEffect(() => {
-        fetch(`http://localhost:2000/allVisas/${email}`)
+        fetch(`http://localhost:2000/applyVisa/${email}`)
             .then(res => res.json())
             .then(data => {
                 setData(data)
@@ -16,11 +15,9 @@ const MyAddedVisas = () => {
     console.log(data)
     return (
         <div>
-            {
-                data.map(item => <MyAddedVisasCard key={item._id} visa={item} ></MyAddedVisasCard>)
-            }
+            {data.length}
         </div>
     );
 };
 
-export default MyAddedVisas;
+export default MyVisaApplication;

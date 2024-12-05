@@ -11,7 +11,7 @@ const NavBer = () => {
             <NavLink to={'allVisas'}><li>All visas</li></NavLink>
             <NavLink to={'addVisa'} ><li>Add Visa</li></NavLink>
             <NavLink to={'myAddedVisas'}><li>My added visas</li></NavLink>
-            <NavLink ><li>My Visa applications</li></NavLink>
+            <NavLink to={'myVisaApplication'}><li>My Visa applications</li></NavLink>
         </>
 
     const handleLogOut = () => {
