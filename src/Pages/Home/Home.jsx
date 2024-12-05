@@ -7,6 +7,7 @@ const Home = () => {
         <div>
             <Banner></Banner>
             <LatestVisas></LatestVisas>
+
             <VisaCard></VisaCard>
         </div>
     );

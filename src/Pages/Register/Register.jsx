@@ -16,8 +16,7 @@ const Register = () => {
         const photo = form.get('photo')
         const userInfo = { name, email, password, photo }
         createUser(email, password)
-            .then(res => {
-
+            .then(() => {
                 toast.success('Registration successful')
                 navigate(state || "/")
             })
