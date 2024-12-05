@@ -17,12 +17,15 @@ const Register = () => {
         const userInfo = { name, email, password, photo }
         createUser(email, password)
             .then(res => {
-                console.log(res.user)
+
                 toast.success('Registration successful')
                 navigate(state || "/")
             })
             .catch(err => {
-                console.log(err)
+                const massage = err.code
+                const split = massage.split('/')[1].split('-').join(" ")
+                toast.error(split)
+
             })
 
     }

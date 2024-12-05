@@ -13,8 +13,8 @@ const Login = () => {
         const form = new FormData(e.target)
         const email = form.get('email')
         const password = form.get('password')
-        const userInfo = { email, password }
-        console.log(userInfo)
+        // const userInfo = { email, password }
+
         signInUser(email, password)
             .then(res => {
                 console.log(res.user)
@@ -22,7 +22,10 @@ const Login = () => {
                 navigate(state || "/")
             })
             .catch(err => {
-                console.log(err)
+                const massage = err.code
+                const split = massage.split('/')[1].split('-').join(" ")
+                toast.error(split)
+
             })
 
     }

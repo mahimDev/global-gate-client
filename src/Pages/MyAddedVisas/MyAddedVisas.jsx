@@ -15,9 +15,15 @@ const MyAddedVisas = () => {
     }, [email])
     console.log(data)
     return (
-        <div>
-            {
-                data.map(item => <MyAddedVisasCard key={item._id} visa={item} ></MyAddedVisasCard>)
+        <div className="min-h-[90vh]">
+            {data.length ?
+                <div>
+                    {
+                        data.map(item => <MyAddedVisasCard key={item._id} visa={item} setData={setData} data={data}></MyAddedVisasCard>)
+                    }
+                </div>
+                :
+                <h1 className="text-5xl text-center mt-20 font-bold text-[#D4AF37] h-[90vh]">Not Fount</h1>
             }
         </div>
     );

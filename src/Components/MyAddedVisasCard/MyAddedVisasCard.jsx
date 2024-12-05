@@ -1,17 +1,17 @@
 import { useState } from "react";
+import { toast } from "react-toastify";
+import Swal from "sweetalert2";
 
 const MyAddedVisasCard = (props = {}) => {
-    const { visa } = props || {}
+    const { visa, data, setData } = props || {}
     const [isOpen, setIsOpen] = useState(false);
     const {
         age_restriction,
         application_method,
         country_image,
-        flag_image,
         country_name,
         description,
         fee,
-        id,
         processing_time,
         required_documents,
         validity,
@@ -29,6 +29,56 @@ const MyAddedVisasCard = (props = {}) => {
         const validity = form.get('validity')
         const updateInfo = { country_name, country_image, visa_type, processing_time, fee, validity }
         console.log(updateInfo)
+        fetch(`http://localhost:2000/updateVisa/${_id}`, {
+            method: "PUT",
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(updateInfo)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                if (data.modifiedCount > 0) {
+                    toast.success("Updated successfully")
+                }
+                setIsOpen(false)
+            })
+    }
+
+    const handleDelete = _id => {
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                fetch(`http://localhost:2000/delete/${_id}`, {
+                    method: "DELETE",
+                })
+                    .then(res => res.json())
+                    .then(dltData => {
+
+                        if (dltData.deletedCount > 0) {
+                            Swal.fire({
+                                title: "Deleted!",
+                                text: "Your Visa has been deleted.",
+                                icon: "success"
+                            });
+                            const remaining = data.filter(item => item._id !== _id)
+                            console.log(remaining)
+                            setData(remaining)
+                        }
+
+                    })
+
+
+            }
+        });
 
     }
     return (
@@ -55,9 +105,6 @@ const MyAddedVisasCard = (props = {}) => {
                                 <p><strong>Description: </strong> <br /> {description}</p>
                             </div>
                         </div>
-
-
-
                     </div>
                     <div className="flex gap-5 mt-4 ">
                         <button
@@ -65,6 +112,7 @@ const MyAddedVisasCard = (props = {}) => {
                             className="rounded-sm w-full text-center py-3 text-xl font-semibold bg-[#3fd437] hover:shadow-xl duration-300"
                         >Update</button>
                         <button
+                            onClick={() => handleDelete(_id)}
                             className="rounded-sm w-full text-center py-3 text-xl font-semibold bg-[#d43737] hover:shadow-xl duration-300"
                         >Delete</button>
 
@@ -172,6 +220,7 @@ const MyAddedVisasCard = (props = {}) => {
                                 {/* Submit Button */}
                                 <div className="">
                                     <button
+
                                         type="submit"
                                         className="rounded-sm w-full text-center py-3 text-xl font-semibold bg-[#D4AF37] hover:shadow-xl duration-300"
                                     >
