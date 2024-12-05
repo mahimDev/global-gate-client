@@ -3,7 +3,7 @@ const VisaCard = () => {
     return (
         <div className=" my-40 ">
             <div>
-                <h1 className="text-center font-bold text-7xl mb-20">Outstanding Immigration <br />
+                <h1 className="text-center text-[#1A1A1A] font-bold text-7xl mb-20">Outstanding Immigration <br />
                     Visa Services.</h1>
             </div>
             <div className="flex">

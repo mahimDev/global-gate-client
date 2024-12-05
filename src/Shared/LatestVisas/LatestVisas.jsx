@@ -12,6 +12,7 @@ const LatestVisas = () => {
 
     return (
         <>
+            <h1 className="text-center text-[#1A1A1A] font-bold text-7xl my-20">Latest visas</h1>
             <div className="w-11/12 mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-10">
                 {
                     data?.map(item => <LatestVisaCard key={item?.id} item={item}></LatestVisaCard>)
