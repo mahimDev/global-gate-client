@@ -4,7 +4,7 @@ import { AuthContext } from "../../Auth/AuthProvider";
 import { toast } from "react-toastify";
 
 const Register = () => {
-    const { user, createUser, googleLogin } = useContext(AuthContext)
+    const { user, isDark, createUser, googleLogin } = useContext(AuthContext)
     const navigate = useNavigate()
     const { state } = useLocation()
     const handleRegistration = e => {
@@ -63,12 +63,12 @@ const Register = () => {
                     onSubmit={handleRegistration}
                 >
 
-                    <h1 className="text-5xl text-center font-semibold">Register</h1>
+                    <h1 className={`text-5xl text-center font-semibold ${isDark ? 'text-gold' : ''}`}>Register</h1>
                     <div className="flex items-center border-b-2 border-[#D4AF37] gap-2 my-10" >
                         <img className="w-8 h-7 " src="https://img.icons8.com/?size=100&id=ywULFSPkh4kI&format=png&color=D4AF37" alt="" />
                         <input
 
-                            className=" pl-3 pr-16 py-2 border-none"
+                            className={`pl-3 pr-16 py-2 border-none ${isDark ? 'bg-darkBg text-lightText' : ''}`}
                             placeholder="username"
                             type="text"
                             name="name"
@@ -78,7 +78,7 @@ const Register = () => {
                         <img className="w-8 h-7 " src="https://img.icons8.com/?size=100&id=12623&format=png&color=D4AF37" alt="" />
                         <input
 
-                            className=" pl-3 pr-16 py-2 border-none"
+                            className={`pl-3 pr-16 py-2 border-none ${isDark ? 'bg-darkBg text-lightText' : ''}`}
                             placeholder="email"
                             type="text"
                             name="email"
@@ -88,7 +88,7 @@ const Register = () => {
                         <img className="w-8 h-7 " src="https://img.icons8.com/?size=100&id=2862&format=png&color=D4AF37" alt="" />
                         <input
 
-                            className=" pl-3 pr-16 py-2 border-none"
+                            className={`pl-3 pr-16 py-2 border-none ${isDark ? 'bg-darkBg text-lightText' : ''}`}
                             placeholder="password"
                             type="text"
                             name="password"
@@ -98,7 +98,7 @@ const Register = () => {
                         <img className="w-8 h-7 " src="https://img.icons8.com/?size=100&id=2724&format=png&color=D4AF37" alt="" />
                         <input
 
-                            className=" pl-3 pr-16 py-2 border-none"
+                            className={`pl-3 pr-16 py-2 border-none ${isDark ? 'bg-darkBg text-lightText' : ''}`}
                             placeholder="photoURL"
                             type="text"
                             name="photo"
@@ -117,8 +117,8 @@ const Register = () => {
                         oogle
                     </button>
                 </div>
-                <p className="pt-2 text-center">You have a account?
-                    <Link to={'/login'}> <span className="text-[#D4AF37] border-b-2 hover:border-[#D4AF37] border-white "
+                <p className={`pt-2 text-center ${isDark ? 'text-lightText' : ''}`}>You have a account?
+                    <Link to={'/login'}> <span className={`text-[#D4AF37] border-b-2 hover:border-[#D4AF37] border-white ${isDark ? 'border-darkBg' : ''}`}
                     >SignIn </span>
                     </Link></p>
             </div>

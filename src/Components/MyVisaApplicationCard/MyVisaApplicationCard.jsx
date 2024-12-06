@@ -1,7 +1,10 @@
+import { useContext } from "react";
 import Swal from "sweetalert2";
+import { AuthContext } from "../../Auth/AuthProvider";
 
 const MyVisaApplicationCard = (props = {}) => {
     const { item, setVisa, visa } = props || {}
+    const { isDark } = useContext(AuthContext)
     const {
         age_restriction,
         application_method,
@@ -57,7 +60,7 @@ const MyVisaApplicationCard = (props = {}) => {
     }
     return (
         <div>
-            <div className="w-11/12 mx-auto mt-5 flex gap-20 border p-2 rounded-md">
+            <div className={`w-11/12 mx-auto mt-5 flex gap-20 border p-2 rounded-md ${isDark ? 'border-gold text-lightText' : ''}`}>
                 <div className="p-2 min-w-fit h-[40vh] border rounded-md bg-amber-400">
                     <img className=" h-full rounded-md" src={country_image} alt="" />
                 </div>
@@ -93,7 +96,7 @@ const MyVisaApplicationCard = (props = {}) => {
 
                         <button
                             onClick={() => handleDelete(_id)}
-                            className="rounded-sm w-full text-center py-3 text-xl font-semibold bg-[#d4a537] hover:shadow-xl duration-300"
+                            className="text-black rounded-sm w-full text-center py-3 text-xl font-semibold bg-[#d4a537] hover:shadow-xl duration-300"
                         >Cancel</button>
 
                     </div>

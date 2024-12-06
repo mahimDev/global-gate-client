@@ -3,7 +3,7 @@ import { toast } from "react-toastify";
 import { AuthContext } from "../../Auth/AuthProvider";
 
 const AddVisa = () => {
-    const { user } = useContext(AuthContext)
+    const { user, isDark } = useContext(AuthContext)
     const email = user?.email
     const documentOptions = [
         "Valid passport",
@@ -45,40 +45,40 @@ const AddVisa = () => {
 
     return (
         <div className="p-6 w-11/12 mx-auto">
-            <h2 className="text-4xl text-center  font-bold my-8">Add Visa</h2>
+            <h2 className={`text-5xl text-center  font-bold my-8 ${isDark ? 'text-gold' : ''}`}>Add Visa</h2>
             <form onSubmit={handleSubmit} >
                 <div className="flex gap-10 justify-between">
                     <div className="space-y-6 w-full">
                         {/* Country Image */}
                         <div>
-                            <label className="block text-gray-700 text-sm mb-2">Country Image URL</label>
+                            <label className={`block text-gray-700 text-sm mb-2 ${isDark ? 'text-gold' : ''}`}>Country Image URL</label>
                             <input
                                 type="text"
                                 name="countryImage"
                                 placeholder="Paste image URL here"
-                                className="w-full px-3 py-2 border rounded-lg"
+                                className={`w-full px-3 py-2 border-b rounded-lg ${isDark ? 'text-lightText bg-darkBg border-gold' : ''}`}
                                 required
                             />
                         </div>
 
                         {/* Country Name */}
                         <div>
-                            <label className="block text-gray-700 text-sm mb-2">Country Name</label>
+                            <label className={`block text-gray-700 text-sm mb-2 ${isDark ? 'text-gold' : ''}`}>Country Name</label>
                             <input
                                 type="text"
                                 name="countryName"
                                 placeholder="Enter country name"
-                                className="w-full px-3 py-2 border rounded-lg"
+                                className={`w-full px-3 py-2 border-b rounded-lg ${isDark ? 'text-lightText bg-darkBg border-gold' : ''}`}
                                 required
                             />
                         </div>
 
                         {/* Visa Type */}
                         <div>
-                            <label className="block text-gray-700 text-sm mb-2">Visa Type</label>
+                            <label className={`block text-gray-700 text-sm mb-2 ${isDark ? 'text-gold' : ''}`}>Visa Type</label>
                             <select
                                 name="visaType"
-                                className="w-full px-3 py-2 border rounded-lg"
+                                className={`w-full px-3 py-2 border-b rounded-lg ${isDark ? 'text-lightText bg-darkBg border-gold' : ''}`}
                                 required
                             >
                                 <option value="Tourist Visa">Tourist Visa</option>
@@ -89,12 +89,12 @@ const AddVisa = () => {
 
                         {/* Processing Time */}
                         <div>
-                            <label className="block text-gray-700 text-sm mb-2">Processing Time</label>
+                            <label className={`block text-gray-700 text-sm mb-2 ${isDark ? 'text-gold' : ''}`}>Processing Time</label>
                             <input
                                 type="text"
                                 name="processingTime"
                                 placeholder="e.g., 15-30 days"
-                                className="w-full px-3 py-2 border rounded-lg"
+                                className={`w-full px-3 py-2 border-b rounded-lg ${isDark ? 'text-lightText bg-darkBg border-gold' : ''}`}
                                 required
                             />
                         </div>
@@ -103,47 +103,47 @@ const AddVisa = () => {
 
                         {/* Age Restriction */}
                         <div>
-                            <label className="block text-gray-700 text-sm mb-2">Age Restriction</label>
+                            <label className={`block text-gray-700 text-sm mb-2 ${isDark ? 'text-gold' : ''}`}>Age Restriction</label>
                             <input
                                 type="text"
                                 name="ageRestriction"
                                 placeholder="Enter age restriction"
-                                className="w-full px-3 py-2 border rounded-lg"
+                                className={`w-full px-3 py-2 border-b rounded-lg ${isDark ? 'text-lightText bg-darkBg border-gold' : ''}`}
                             />
                         </div>
 
                         {/* Fee */}
                         <div>
-                            <label className="block text-gray-700 text-sm mb-2">Fee</label>
+                            <label className={`block text-gray-700 text-sm mb-2 ${isDark ? 'text-gold' : ''}`}>Fee</label>
                             <input
                                 type="text"
                                 name="fee"
                                 placeholder="Enter visa fee"
-                                className="w-full px-3 py-2 border rounded-lg"
+                                className={`w-full px-3 py-2 border-b rounded-lg ${isDark ? 'text-lightText bg-darkBg border-gold' : ''}`}
                                 required
                             />
                         </div>
 
                         {/* Validity */}
                         <div>
-                            <label className="block text-gray-700 text-sm mb-2">Validity</label>
+                            <label className={`block text-gray-700 text-sm mb-2 ${isDark ? 'text-gold' : ''}`}>Validity</label>
                             <input
                                 type="text"
                                 name="validity"
                                 placeholder="e.g., 6 months, 1 year"
-                                className="w-full px-3 py-2 border rounded-lg"
+                                className={`w-full px-3 py-2 border-b rounded-lg ${isDark ? 'text-lightText bg-darkBg border-gold' : ''}`}
                                 required
                             />
                         </div>
 
                         {/* Application Method */}
                         <div>
-                            <label className="block text-gray-700 text-sm mb-2">Application Method</label>
+                            <label className={`block text-gray-700 text-sm mb-2 ${isDark ? 'text-gold' : ''}`}>Application Method</label>
                             <input
                                 type="text"
                                 name="applicationMethod"
                                 placeholder="e.g., Online, Embassy"
-                                className="w-full px-3 py-2 border rounded-lg"
+                                className={`w-full px-3 py-2 border-b rounded-lg ${isDark ? 'text-lightText bg-darkBg border-gold' : ''}`}
                                 required
                             />
                         </div>
@@ -154,10 +154,10 @@ const AddVisa = () => {
                 {/* end */}
                 {/* Required Documents */}
                 <div className="my-4">
-                    <label className="block text-gray-700 text-sm mb-2">Required Documents</label>
+                    <label className={`block text-gray-700 text-sm mb-2 ${isDark ? 'text-gold' : ''}`}>Required Documents</label>
                     <div className="space-y-2">
                         {documentOptions.map((doc, index) => (
-                            <label key={index} className="flex  items-center space-x-2">
+                            <label key={index} className={`flex  items-center space-x-2 ${isDark ? 'text-lightText' : ''}`}>
                                 <input
                                     type="checkbox"
                                     name="checkbox"
@@ -172,11 +172,11 @@ const AddVisa = () => {
 
                 {/* Description */}
                 <div>
-                    <label className="block text-gray-700 text-sm mb-2">Description</label>
+                    <label className={`block text-gray-700 text-sm mb-2 ${isDark ? 'text-gold' : ''}`}>Description</label>
                     <textarea
                         name="description"
                         placeholder="Enter visa description"
-                        className="w-full px-3 py-2 border rounded-lg"
+                        className={`w-full px-3 py-2 border-b rounded-lg ${isDark ? 'text-lightText bg-darkBg border-gold' : ''}`}
                         rows="4"
                         required
                     ></textarea>

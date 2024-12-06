@@ -25,7 +25,7 @@ const NavBer = () => {
                 console.log(err)
             })
     }
-    console.log(isDark)
+
 
     return (
 
@@ -53,15 +53,14 @@ const NavBer = () => {
                                 src={user?.photoURL}
                                 alt="avatar GlobalGate"
                             />
-                            <div className="group-hover:block hidden rounded-xl absolute right-0 top-12 p-5 bg-white/70 backdrop-blur-2xl">
+                            <div className={`group-hover:block hidden rounded-xl absolute right-0 top-12 p-5 bg-white/70 backdrop-blur-2xl ${isDark ? 'text-darkBg' : ''}`}>
                                 <h1 className="mb-2">{user?.displayName}</h1>
                                 <h1 className="my-2">{user?.email}</h1>
                                 <button
 
                                     onClick={handleLogOut}
-                                    className="
-                                 border-2 border-black bg-[#D4AF37]
-                                 py-1 px-3 font-semibold rounded-md"
+                                    className={`  border-2 border-black bg-[#D4AF37]
+                                 py-1 px-3 font-semibold rounded-md ${isDark ? 'bg-accentDark text-darkBg border-darkBg' : ''}`}
                                 >LogOut</button>
                             </div>
                         </div>
