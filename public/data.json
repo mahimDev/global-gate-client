@@ -6,14 +6,7 @@
     "country_name": "United States",
     "visa_type": "Tourist Visa",
     "processing_time": "15-30 days",
-    "required_documents": [
-      "Valid passport",
-      "Visa application form",
-      "Recent passport-sized photograph",
-      "Proof of financial means",
-      "Travel itinerary",
-      "Invitation letter (if applicable)"
-    ],
+    "required_documents": "Valid passport",
     "description": "Explore the diverse landscapes and vibrant cities of the United States.",
     "age_restriction": "None",
     "fee": "$160",
@@ -27,14 +20,7 @@
     "country_name": "Canada",
     "visa_type": "Work Permit",
     "processing_time": "8-12 weeks",
-    "required_documents": [
-      "Valid passport",
-      "Job offer letter",
-      "Work permit application",
-      "Proof of educational qualifications",
-      "Medical examination certificate",
-      "Proof of financial means"
-    ],
+    "required_documents": "Work permit application",
     "description": "Work in one of the most developed and diverse countries in the world.",
     "age_restriction": "18+",
     "fee": "$155",
@@ -48,13 +34,7 @@
     "country_name": "United Kingdom",
     "visa_type": "Student Visa",
     "processing_time": "3 weeks",
-    "required_documents": [
-      "Valid passport",
-      "Confirmation of Acceptance for Studies (CAS)",
-      "Proof of financial support",
-      "English language proficiency test results",
-      "Tuberculosis test results (if applicable)"
-    ],
+    "required_documents": "Valid passport",
     "description": "Study at world-renowned institutions in the United Kingdom.",
     "age_restriction": "16+",
     "fee": "£348",
@@ -68,14 +48,7 @@
     "country_name": "Australia",
     "visa_type": "Visitor Visa",
     "processing_time": "20-30 days",
-    "required_documents": [
-      "Valid passport",
-      "Visa application form",
-      "Proof of financial means",
-      "Health insurance",
-      "Travel itinerary",
-      "Letter of support (if applicable)"
-    ],
+    "required_documents": "Health insurance",
     "description": "Experience the stunning natural beauty and unique wildlife of Australia.",
     "age_restriction": "None",
     "fee": "AUD 145",
@@ -89,14 +62,7 @@
     "country_name": "Japan",
     "visa_type": "Business Visa",
     "processing_time": "5-10 days",
-    "required_documents": [
-      "Valid passport",
-      "Visa application form",
-      "Recent passport-sized photograph",
-      "Letter of invitation",
-      "Certificate for completion of registration",
-      "Business itinerary"
-    ],
+    "required_documents": "Letter of invitation",
     "description": "Engage in business opportunities in Japan, the land of innovation.",
     "age_restriction": "18+",
     "fee": "JPY 3,000",
@@ -110,13 +76,7 @@
     "country_name": "United Arab Emirates",
     "visa_type": "Transit Visa",
     "processing_time": "2-5 days",
-    "required_documents": [
-      "Valid passport",
-      "Confirmed flight ticket",
-      "Transit visa application form",
-      "Passport-sized photograph",
-      "Proof of onward travel"
-    ],
+    "required_documents": "Proof of onward travel",
     "description": "Discover the futuristic cities of UAE during your transit.",
     "age_restriction": "None",
     "fee": "$50",

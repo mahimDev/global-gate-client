@@ -1,14 +1,17 @@
+import { useContext } from "react";
+import { AuthContext } from "../../Auth/AuthProvider";
 
 const VisaCard = () => {
+    const { isDark } = useContext(AuthContext)
     return (
         <div className=" my-40 ">
             <div>
-                <h1 className="text-center text-[#1A1A1A] font-bold text-7xl mb-20">Outstanding Immigration <br />
+                <h1 className={`text-center ${isDark ? 'text-gold' : 'text-darkBg'} font-bold text-7xl mb-20`}>Outstanding Immigration <br />
                     Visa Services.</h1>
             </div>
             <div className="flex">
                 {/* student */}
-                <div className="relative max-w-md mx-auto  bg-white rounded shadow-2xl ">
+                <div className={`relative max-w-md mx-auto ${isDark ? 'shadow-2xl shadow-gold' : ''} bg-white rounded shadow-2xl `}>
                     <div className="overflow-hidden group">
                         {/* Image Section */}
                         <img
@@ -37,7 +40,7 @@ const VisaCard = () => {
                     </div>
                 </div>
                 {/* business*/}
-                <div className="relative max-w-md mx-auto  bg-white rounded shadow-2xl ">
+                <div className={`relative max-w-md mx-auto ${isDark ? 'shadow-2xl shadow-gold' : ''} bg-white rounded shadow-2xl `}>
                     <div className="overflow-hidden group">
                         {/* Image Section */}
                         <img
@@ -66,7 +69,7 @@ const VisaCard = () => {
                     </div>
                 </div>
                 {/* family*/}
-                <div className="relative max-w-md mx-auto  bg-white rounded shadow-2xl ">
+                <div className={`relative max-w-md mx-auto ${isDark ? 'shadow-2xl shadow-gold' : ''} bg-white rounded shadow-2xl `}>
                     <div className="overflow-hidden group">
                         {/* Image Section */}
                         <img
@@ -94,7 +97,10 @@ const VisaCard = () => {
                         </div>
                     </div>
                 </div>
+
             </div>
+
+
         </div>
     );
 };

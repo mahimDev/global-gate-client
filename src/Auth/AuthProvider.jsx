@@ -8,6 +8,7 @@ const AuthProvider = (props = {}) => {
     const googleProvider = new GoogleAuthProvider()
     const [user, setUser] = useState(null)
     const [loading, setLoading] = useState(true)
+    const [isDark, setIsDark] = useState(() => false)
     const createUser = (email, password) => {
         setLoading(true)
         return createUserWithEmailAndPassword(auth, email, password)
@@ -38,10 +39,13 @@ const AuthProvider = (props = {}) => {
     const authInfo = {
         user,
         loading,
+        isDark,
+        setIsDark,
         createUser,
         signInUser,
         signOutUser,
-        googleLogin
+        googleLogin,
+
     }
     return (
         <AuthContext.Provider value={authInfo}>

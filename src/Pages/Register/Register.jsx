@@ -15,7 +15,24 @@ const Register = () => {
         const password = form.get('password')
         const photo = form.get('photo')
         const userInfo = { name, email, password, photo }
+
+        if (!password) {
+            return toast.warn('Please enter your password')
+        }
+        if (!/[A-Z]/.test(password)) {
+            return toast.warn('Please enter must be uppercase')
+        }
+        if (!/[a-z]/.test(password)) {
+            return toast.warn('Please enter must be lowercase')
+        }
+        if (!/.{6,}$/.test(password)) {
+            return toast.warn('Please enter must be 6 characters')
+        }
+
+
+
         createUser(email, password)
+
             .then(() => {
                 toast.success('Registration successful')
                 navigate(state || "/")
@@ -29,6 +46,7 @@ const Register = () => {
 
     }
     const handleGoogleLogin = () => {
+
         googleLogin()
             .then(res => {
                 console.log(res.user)
@@ -99,7 +117,10 @@ const Register = () => {
                         oogle
                     </button>
                 </div>
-                <p className="pt-2 text-center">You have a account?  <Link to={'/login'}> <span className="text-[#D4AF37] border-b-2 hover:border-[#D4AF37] border-white ">SignIn </span></Link></p>
+                <p className="pt-2 text-center">You have a account?
+                    <Link to={'/login'}> <span className="text-[#D4AF37] border-b-2 hover:border-[#D4AF37] border-white "
+                    >SignIn </span>
+                    </Link></p>
             </div>
         </div>
     );
