@@ -9,7 +9,7 @@ const NavBer = () => {
 
     const nav =
         <>
-            <NavLink ><li>Home</li></NavLink>
+            <NavLink to={"/"}><li>Home</li></NavLink>
             <NavLink to={'allVisas'}><li>All visas</li></NavLink>
             <NavLink to={'addVisa'} ><li>Add Visa</li></NavLink>
             <NavLink to={'myAddedVisas'}><li>My added visas</li></NavLink>

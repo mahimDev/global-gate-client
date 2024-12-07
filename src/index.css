@@ -16,3 +16,7 @@
 html {
   scroll-behavior: smooth;
 }
+
+.active {
+  border-bottom: 3px solid rgb(78, 77, 75);
+}
