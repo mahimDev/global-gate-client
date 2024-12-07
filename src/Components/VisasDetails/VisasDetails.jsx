@@ -4,7 +4,7 @@ import { AuthContext } from "../../Auth/AuthProvider";
 import { toast } from "react-toastify";
 
 const VisasDetails = () => {
-    const { user } = useContext(AuthContext)
+    const { user, isDark } = useContext(AuthContext)
     const [isOpen, setIsOpen] = useState(false);
     const { id } = useParams()
     const loaderData = useLoaderData()
@@ -69,7 +69,7 @@ const VisasDetails = () => {
                 <img className=" h-[70vh] rounded-md" src={country_image} alt="" />
             </div>
             <div>
-                <div className=" flex">
+                <div className={`flex ${isDark ? 'text-lightText' : ''}`}>
                     <div className="">
                         <h1 className="text-4xl font-semibold ">{country_name}</h1>
                         <p className="mt-7 "><strong>Visa Type:</strong> <br /> {visa_type}</p>
