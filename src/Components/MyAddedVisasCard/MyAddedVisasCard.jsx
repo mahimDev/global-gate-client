@@ -30,8 +30,8 @@ const MyAddedVisasCard = (props = {}) => {
         const fee = form.get('fee')
         const validity = form.get('validity')
         const updateInfo = { country_name, country_image, visa_type, processing_time, fee, validity }
-        console.log(updateInfo)
-        fetch(`http://localhost:2000/updateVisa/${_id}`, {
+
+        fetch(`https://global-gate-server-fawn.vercel.app/updateVisa/${_id}`, {
             method: "PUT",
             headers: {
                 'content-type': 'application/json'
@@ -40,7 +40,7 @@ const MyAddedVisasCard = (props = {}) => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data)
+
                 if (data.modifiedCount > 0) {
                     toast.success("Updated successfully")
                 }
@@ -59,7 +59,7 @@ const MyAddedVisasCard = (props = {}) => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:2000/delete/${_id}`, {
+                fetch(`https://global-gate-server-fawn.vercel.app/delete/${_id}`, {
                     method: "DELETE",
                 })
                     .then(res => res.json())
@@ -72,7 +72,7 @@ const MyAddedVisasCard = (props = {}) => {
                                 icon: "success"
                             });
                             const remaining = data.filter(item => item._id !== _id)
-                            console.log(remaining)
+
                             setData(remaining)
                         }
 

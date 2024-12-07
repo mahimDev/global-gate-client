@@ -26,7 +26,7 @@ const AddVisa = () => {
         const required_documents = form.get('checkbox')
         const description = form.get('description')
         const visaInfo = { country_image, country_name, visa_type, processing_time, age_restriction, fee, validity, application_method, required_documents, description, email };
-        fetch('http://localhost:2000/addVisa', {
+        fetch('https://global-gate-server-fawn.vercel.app/addVisa', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -35,7 +35,7 @@ const AddVisa = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data)
+
                 if (data.insertedId) {
                     toast.success("Successfully added Visa")
                 }

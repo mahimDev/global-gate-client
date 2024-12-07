@@ -8,15 +8,15 @@ const MyVisaApplication = () => {
     const { user, isDark } = useContext(AuthContext)
     const email = user?.email
     useEffect(() => {
-        fetch(`http://localhost:2000/applyVisa/${email}?search=${value}`)
+        fetch(`https://global-gate-server-fawn.vercel.app/applyVisa/${email}?search=${value}`)
             .then(res => res.json())
             .then(data => {
                 setVisa(data)
-                console.log(data)
+
             })
     }, [email, value])
 
-    console.log(value)
+
     return (
         <div className="min-h-[90vh]">
             <h1 className={`text-center ${isDark ? 'text-gold' : 'text-[#1A1A1A]'} font-bold text-6xl my-20`}>My Visa Application</h1>

@@ -7,13 +7,13 @@ const MyAddedVisas = () => {
     const { user } = useContext(AuthContext)
     const email = user?.email
     useEffect(() => {
-        fetch(`http://localhost:2000/allVisas/${email}`)
+        fetch(`https://global-gate-server-fawn.vercel.app/allVisas/${email}`)
             .then(res => res.json())
             .then(data => {
                 setData(data)
             })
     }, [email])
-    console.log(data)
+
     return (
         <div className="min-h-[90vh]">
             {data.length ?

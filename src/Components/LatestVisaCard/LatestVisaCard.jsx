@@ -21,9 +21,7 @@ const LatestVisaCard = (props = {}) => {
         _id
     } = item
 
-    // const handleSeeDetailsBtn = id => {
-    //     console.log(id)
-    // }
+
     return (
         <div className={`p-5 rounded-md ${isDark ? 'border border-accentDark text-lightText hover:shadow-[#8270337d]' : ''} hover:shadow-2xl  duration-200`}>
             <div className="relative ">

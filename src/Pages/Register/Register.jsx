@@ -49,11 +49,11 @@ const Register = () => {
 
         googleLogin()
             .then(res => {
-                console.log(res.user)
+
                 navigate(state || "/")
             })
             .then(err => {
-                console.log(err)
+
             })
     }
     return (

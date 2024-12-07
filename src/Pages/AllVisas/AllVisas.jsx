@@ -33,7 +33,7 @@ const AllVisas = () => {
 
 
     const { isDark } = useContext(AuthContext)
-    console.log(data)
+
     return (
         <div className="">
             <div className="flex justify-between items-center  mb-16">

@@ -17,7 +17,7 @@ const Login = () => {
 
         signInUser(email, password)
             .then(res => {
-                console.log(res.user)
+
                 toast.success('SignIn successful')
                 navigate(state || "/")
             })
@@ -32,11 +32,11 @@ const Login = () => {
     const handleGoogleLogin = () => {
         googleLogin()
             .then(res => {
-                console.log(res.user)
+
                 navigate(state || '/')
             })
             .then(err => {
-                console.log(err)
+
             })
     }
     return (

@@ -8,7 +8,7 @@ const LatestVisas = () => {
     const [data, setData] = useState([])
     const { isDark } = useContext(AuthContext)
     useEffect(() => {
-        fetch('http://localhost:2000/allVisa')
+        fetch('https://global-gate-server-fawn.vercel.app/allVisa')
             .then(res => res.json())
             .then(data => setData(data))
     }, [])

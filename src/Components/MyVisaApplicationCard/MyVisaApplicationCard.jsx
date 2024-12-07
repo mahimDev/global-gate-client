@@ -34,12 +34,12 @@ const MyVisaApplicationCard = (props = {}) => {
             confirmButtonText: "Yes, cancel it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:2000/applicationDelete/${_id}`, {
+                fetch(`https://global-gate-server-fawn.vercel.app/applicationDelete/${_id}`, {
                     method: "DELETE",
                 })
                     .then(res => res.json())
                     .then(dltData => {
-                        console.log(dltData)
+
                         if (dltData.deletedCount > 0) {
                             Swal.fire({
                                 title: "canceled!",

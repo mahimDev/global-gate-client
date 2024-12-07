@@ -44,9 +44,9 @@ const VisasDetails = () => {
             country_image,
         };
 
-        console.log(info)
+
         setIsOpen(false); // Close modal after submission
-        fetch('http://localhost:2000/applyVisa', {
+        fetch('https://global-gate-server-fawn.vercel.app/applyVisa', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -55,7 +55,7 @@ const VisasDetails = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data)
+
                 if (data.insertedId) {
                     toast.success("Application submitted successfully!");
                 }

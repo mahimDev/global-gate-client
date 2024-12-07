@@ -16,6 +16,7 @@ const router = createBrowserRouter([
     {
         path: '/',
         element: <Layout></Layout>,
+        errorElement: <ErrorPage></ErrorPage>,
         children: [
             {
                 path: '/',
@@ -35,7 +36,7 @@ const router = createBrowserRouter([
                     {
                         path: '/allVisas',
                         element: <AllVisas></AllVisas>,
-                        loader: () => fetch("http://localhost:2000/allVisas")
+                        loader: () => fetch("https://global-gate-server-fawn.vercel.app/allVisas")
                     },
                     {
                         path: '/myAddedVisas',
@@ -66,7 +67,7 @@ const router = createBrowserRouter([
                             <PrivateRoute>
                                 <VisasDetails></VisasDetails>
                             </PrivateRoute>,
-                        loader: ({ params }) => fetch(`http://localhost:2000/visa/${params.id}`)
+                        loader: ({ params }) => fetch(`https://global-gate-server-fawn.vercel.app/visa/${params.id}`)
                     }
 
                 ]
@@ -74,10 +75,10 @@ const router = createBrowserRouter([
         ]
 
     },
-    {
-        path: '*',
-        element: <ErrorPage></ErrorPage>
-    }
+    // {
+    //     path: '*',
+    //     element: <ErrorPage></ErrorPage>
+    // }
 
 ])
 

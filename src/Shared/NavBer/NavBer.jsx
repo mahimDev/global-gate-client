@@ -19,11 +19,11 @@ const NavBer = () => {
     const handleLogOut = () => {
         signOutUser()
             .then(res => {
-                console.log(res)
+
                 toast.success('logout successfully')
             })
             .catch(err => {
-                console.log(err)
+
             })
     }
 
