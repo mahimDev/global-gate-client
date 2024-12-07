@@ -85,7 +85,7 @@ const MyAddedVisasCard = (props = {}) => {
     }
     return (
         <div>
-            <div className={`w-11/12 mx-auto mt-5 flex gap-20 border p-2 rounded-md ${isDark ? 'border-gold text-lightText' : ''}`}>
+            <div className={`w-11/12 mx-auto mt-5 md:flex gap-20 border p-2 rounded-md ${isDark ? 'border-gold text-lightText' : ''}`}>
                 <div className="p-2 min-w-fit h-[40vh]  rounded-md bg-amber-400">
                     <img className=" h-full rounded-md" src={country_image} alt="" />
                 </div>

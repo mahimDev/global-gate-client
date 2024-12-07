@@ -9,7 +9,7 @@ const VisaCard = () => {
                 <h1 className={`text-center ${isDark ? 'text-gold' : 'text-darkBg'} font-bold text-7xl mb-20`}>Outstanding Immigration <br />
                     Visa Services.</h1>
             </div>
-            <div className="flex">
+            <div className="md:flex ">
                 {/* student */}
                 <div className={`relative max-w-md mx-auto ${isDark ? 'shadow-2xl shadow-gold' : ''} bg-white rounded shadow-2xl `}>
                     <div className="overflow-hidden group">
@@ -40,7 +40,7 @@ const VisaCard = () => {
                     </div>
                 </div>
                 {/* business*/}
-                <div className={`relative max-w-md mx-auto ${isDark ? 'shadow-2xl shadow-gold' : ''} bg-white rounded shadow-2xl `}>
+                <div className={`relative max-w-md mx-auto ${isDark ? 'shadow-2xl shadow-gold' : ''} bg-white rounded shadow-2xl mt-32 md:mt-0`}>
                     <div className="overflow-hidden group">
                         {/* Image Section */}
                         <img
@@ -54,7 +54,7 @@ const VisaCard = () => {
                     <div className="p-5  absolute bg-white/25 top-[75%] left-[10%] right-[10%] backdrop-blur-lg rounded-md shadow-2xl">
                         <h3 className="text-2xl font-semibold text-gray-800">Business Visa</h3>
                         <p className="mt-2 text-sm text-gray-600">
-                            Processing times vary by visa type and country, ranging from a few weeks to several months.
+                            The required documents vary by visa is type but generally include a valid times passport, application photos
                         </p>
 
                         {/* Button */}
@@ -69,7 +69,7 @@ const VisaCard = () => {
                     </div>
                 </div>
                 {/* family*/}
-                <div className={`relative max-w-md mx-auto ${isDark ? 'shadow-2xl shadow-gold' : ''} bg-white rounded shadow-2xl `}>
+                <div className={`relative max-w-md mx-auto ${isDark ? 'shadow-2xl shadow-gold' : ''} bg-white rounded shadow-2xl mt-32 md:mt-0`}>
                     <div className="overflow-hidden group">
                         {/* Image Section */}
                         <img
@@ -83,7 +83,7 @@ const VisaCard = () => {
                     <div className="p-5  absolute bg-white/25 top-[75%] left-[20%] backdrop-blur-lg rounded-md shadow-2xl">
                         <h3 className="text-2xl font-semibold text-gray-800">Family Visa</h3>
                         <p className="mt-2 text-sm text-gray-600">
-                            Processing times vary by visa type and country, ranging from a few weeks to several months.
+                            If your application is denied, you will be given a reason. You may be able to kinds reapply or appeal
                         </p>
 
                         {/* Button */}

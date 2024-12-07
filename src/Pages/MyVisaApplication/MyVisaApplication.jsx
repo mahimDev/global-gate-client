@@ -15,40 +15,31 @@ const MyVisaApplication = () => {
                 console.log(data)
             })
     }, [email, value])
-    // const handleSubmit = (e) => {
-    //     e.preventDefault()
 
-    //     fetch(`http://localhost:2000/visa?search=${value}`)
-    //         .then(res => res.json())
-    //         .then(data => {
-    //             console.log(data)
-    //         })
-
-    // }
     console.log(value)
     return (
         <div className="min-h-[90vh]">
+            <h1 className={`text-center ${isDark ? 'text-gold' : 'text-[#1A1A1A]'} font-bold text-6xl my-20`}>My Visa Application</h1>
+            <div className="flex justify-center my-9">
+                <div
+                // onSubmit={handleSubmit}
+                >
+                    <input
+                        onChange={(e) => setValue(e.target.value)}
+                        className={`border py-3 pl-4 pr-10  rounded-l-xl text-lg`}
+                        placeholder="Search country name"
+                        type="text" name="search" id="" />
+                    <input
+
+                        className={`border cursor-pointer py-3 pl-4 pr-10 ${isDark ? 'text-darkBg bg-gold' : ''} rounded-r-xl font-bold text-lg`}
+                        type="submit" value="Submit" id="" />
+
+                </div>
+            </div>
             {visa.length ?
 
                 <div>
-                    <h1 className={`text-center ${isDark ? 'text-gold' : 'text-[#1A1A1A]'} font-bold text-6xl my-20`}>My Visa Application</h1>
-                    <div className="flex justify-center my-9">
-                        <form
-                        // onSubmit={handleSubmit}
 
-                        >
-                            <input
-                                onChange={(e) => setValue(e.target.value)}
-                                className={`border py-3 pl-4 pr-10  rounded-l-xl text-lg`}
-                                placeholder="Search country name"
-                                type="text" name="search" id="" />
-                            <input
-
-                                className={`border py-3 pl-4 pr-10  rounded-r-xl font-bold text-lg`}
-                                value="Submit" id="" />
-
-                        </form>
-                    </div>
                     {
                         visa.map(item => <MyVisaApplicationCard key={item._id} item={item} setVisa={setVisa} visa={visa}></MyVisaApplicationCard>)
                     }

@@ -38,7 +38,7 @@ const AllVisas = () => {
         <div className="">
             <div className="flex justify-between items-center  mb-16">
                 <div className=" w-1/6"></div>
-                <h1 className={`text-center ${isDark ? 'text-gold' : 'text-[#1A1A1A]'} font-bold text-7xl my-20`}>All Visas</h1>
+                <h1 className={`text-center ${isDark ? 'text-gold' : 'text-[#1A1A1A]'} font-bold md:text-7xl text-4xl my-20`}>All Visas</h1>
                 <div>
                     <div className="relative ">
                         {/* dropdown - btn */}

@@ -53,36 +53,6 @@ const Banner = () => {
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <div className='text-5xl text-center backdrop-blur-md h-[85vh] bg-white/20   '>
-                        <div className='App'>
-                            <h1 style={{ paddingTop: '5rem', margin: 'auto 0', fontWeight: 'normal' }}>
-                                Your Gateway to Global Opportunities <br /> {' '}
-                                <span style={{ color: 'red', fontWeight: 'bold' }}>
-                                    {/* Style will be inherited from the parent element */}
-                                    <Typewriter
-                                        words={[
-                                            'Your Journey Starts Here',
-                                            'Explore New Horizons',
-                                            'Visa Made Simple',
-                                            'Bringing the World Closer',
-                                            'From Dreams to Destinations',
-                                            'Cross Borders with Confidence'
-                                        ]}
-                                        loop={5}
-                                        cursor
-                                        cursorStyle='_'
-                                        typeSpeed={100}
-                                        deleteSpeed={40}
-                                        delaySpeed={1000}
-                                    // onLoopDone={handleDone}
-                                    // onType={handleType}
-                                    />
-                                </span>
-                            </h1>
-                        </div>
-                    </div>
-                </SwiperSlide>
-                <SwiperSlide>
                     <div className='lg:flex  backdrop-blur-md h-[85vh] bg-white/20   '>
 
                         <div className='flex-1'>
@@ -94,6 +64,18 @@ const Banner = () => {
                         <div className='flex-1'>
                             <img className='w-full max-h-[100vh] object-cover mt-5' src="https://i.ibb.co.com/J7B6VsG/Pngtree-take-a-hike-typography-vitage-5870349.png" alt="" />
                         </div>
+                    </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                    <div className='  backdrop-blur-md h-[85vh] bg-white/20   '>
+
+                        <div className=''>
+                            <h1 className="  text-[#1A1A1A] ">   </h1>
+                            <div className='  mr-10 lg:mr-0 lg:text-7xl  text-center lg:pt-56 pt-10 text-3xl font-bold '>
+                                <h1>  Opening Doors </h1> <br /> <span className='ml-[20%] '>to Your Dreams.</span>
+                            </div>
+                        </div>
+
                     </div>
                 </SwiperSlide>
 
